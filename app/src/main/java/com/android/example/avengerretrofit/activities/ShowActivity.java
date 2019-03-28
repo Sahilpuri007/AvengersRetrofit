@@ -1,10 +1,12 @@
 package com.android.example.avengerretrofit.activities;
 
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.android.example.avengerretrofit.R;
 import com.android.example.avengerretrofit.adapter.AvengersAdapter;
@@ -24,6 +26,7 @@ public class ShowActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,6 +34,8 @@ public class ShowActivity extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(Api.BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -62,5 +67,8 @@ public class ShowActivity extends AppCompatActivity {
         });
 
 
+    }
+
+    private void doRefresh() {
     }
 }

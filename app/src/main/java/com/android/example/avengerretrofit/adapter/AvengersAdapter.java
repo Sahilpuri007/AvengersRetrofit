@@ -11,7 +11,6 @@ import com.android.example.avengerretrofit.R;
 import com.android.example.avengerretrofit.model.Hero;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class AvengersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
 
